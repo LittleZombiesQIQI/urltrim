@@ -4,8 +4,6 @@
 
 ​		没啥实质性的功能,只是之前处理一大堆url的时候,不同需求得整不同的脚本,感觉很麻烦,所以整合了一下,名字也是乱起的,代码是快快地整完的,只是测试了下基本功能,BUG什么的没遇到,如果使用时遇到了BUG,自己解决,扫描的话估计会有误报
 
-![QQ截图20221015100504](https://i0.hdslb.com/bfs/album/7e6dd5914f7eb79dc70ba83786af1262479616d2.png)
-
 ## 简单功能
 
 ```
@@ -70,13 +68,11 @@ url状态码检测,多个状态码使用逗号(,)隔开
 python3 urltrim.py -f qiqi.txt
 ```
 
-### 挑选端口号为8080和9090的url
+### 挑选带有关键字的url
 
 ```shell
 python3 urltrim.py -f qiqi.txt -r 8080,9090
 ```
-
-
 
 ### 裁剪url
 
@@ -112,8 +108,8 @@ python3 urltrim.py -f qiqi.txt -ea /login
 挑选出状态码为200的url
 python3 urltrim.py -f qiqi.txt -s 200
 
-挑选出状态码为200的url
-python3 urltrim.py -f qiqi.txt -s 200
+挑选出状态码为200或404的url
+python3 urltrim.py -f qiqi.txt -s 200,404
 ```
 
 ### 设置扫描线程
@@ -130,21 +126,7 @@ python3 urltrim.py -f qiqi.txt -s 200 -t 10
 python3 urltrim.py qiqi.txt -fa http:// -ea /login -m .gov,.edu -s 200 -t 10
 ```
 
-### 举例
-
-​		目前手上有一份jboss的url文件,想要进行拼接并进行状态码200检测,使用默认线程50
-
-```shell
-python3 urltrim.py -f jboss.txt -ea /jmx-console/ -s 200
-```
-
-![QQ截图20221015110103](https://i0.hdslb.com/bfs/album/913b7a34c039af95fe623d3e9bf664c7916be523.png)
-
 结果会保存在url文件同目录下,格式为:名字_result.txt
-
-![QQ截图20221015110212](https://i0.hdslb.com/bfs/album/09d6fa190db50892d5a28ea8e28964b69b4dec3f.png)
-
-![QQ截图20221015110358](https://i0.hdslb.com/bfs/album/6589a0ae8cdf2b2fe980dda1bc494ade92c3e8f4.png)
 
 **注:由于内部未添加poc,不能做漏洞验证**
 
