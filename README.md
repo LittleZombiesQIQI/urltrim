@@ -108,8 +108,8 @@ python3 urltrim.py -f qiqi.txt -ea /login
 挑选出状态码为200的url
 python3 urltrim.py -f qiqi.txt -s 200
 
-挑选出状态码为200或404的url
-python3 urltrim.py -f qiqi.txt -s 200,404
+挑选出状态码为200或302的url
+python3 urltrim.py -f qiqi.txt -s 200,302
 ```
 
 ### 设置扫描线程
